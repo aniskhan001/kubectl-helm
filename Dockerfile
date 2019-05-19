@@ -11,3 +11,6 @@ RUN curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > get_he
 RUN chmod 700 get_helm.sh
 RUN ./get_helm.sh
 RUN rm get_helm.sh
+
+# install helm tiller plugin
+RUN helm plugin install https://github.com/rimusz/helm-tiller
