@@ -1,6 +1,6 @@
 name: "Docker push"
 on:
-- pull_request
+- push
 
 jobs:
   triage:
