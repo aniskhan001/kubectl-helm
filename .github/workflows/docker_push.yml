@@ -1,0 +1,13 @@
+name: "Docker push"
+on:
+- pull_request
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sign-in to Docker
+      uses: actions/docker/login@master
+      env:
+        DOCKER_USERNAME: ${{ secrets.GITHUB_DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.GITHUB_DOCKER_PASSWORD }}
