@@ -1,13 +1,11 @@
 name: "Docker push"
-on:
-- push
+on: [push]
 
 jobs:
-  triage:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Sign-in to Docker
-      uses: actions/docker/login@master
-      env:
-        DOCKER_USERNAME: ${{ secrets.GITHUB_DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.GITHUB_DOCKER_PASSWORD }}
+      - uses: actions/checkout@v1
+      - name: Build the Docker image
+        run: docker build . -t aniskhan001/kubectl-helm --build-arg K8S_VERSION=v1.16.2 --build-arg HELM_VERSION=v3.0.0
