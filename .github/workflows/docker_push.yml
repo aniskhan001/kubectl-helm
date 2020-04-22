@@ -12,6 +12,7 @@ jobs:
       - name: Build & Push Docker Image
         run: |
           docker build . \
+            -t aniskhan001/kubectl-helm:latest \
             -t aniskhan001/kubectl-helm:${HELM_VERSION} \
             --build-arg K8S_VERSION=v${K8S_VERSION} \
             --build-arg HELM_VERSION=v${HELM_VERSION}
