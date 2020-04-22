@@ -4,10 +4,8 @@ on: [push]
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-
       - name: Build & Push Docker Image
         run: |
           docker build . \
@@ -19,3 +17,14 @@ jobs:
         env:
           K8S_VERSION: 1.18.2
           HELM_VERSION: 3.1.2
+
+  update_dockerhub_description:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker Hub Description Update
+        uses: peter-evans/dockerhub-description@v2
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKERHUB_REPOSITORY: peterevans/dockerhub-description
