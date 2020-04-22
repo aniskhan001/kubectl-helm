@@ -1,4 +1,4 @@
-# kubectl-helm
+# kubectl-helm ![docker build](https://github.com/aniskhan001/kubectl-helm/workflows/docker%20build/badge.svg?event=push)
 Minimal Docker image with `kubectl` and `helm` command available with a `sh`ell
 
 
