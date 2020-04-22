@@ -8,4 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Build the Docker image
-        run: docker build . -t aniskhan001/kubectl-helm --build-arg K8S_VERSION=v1.16.2 --build-arg HELM_VERSION=v3.0.0 --build-arg HELM_GCS_VERSION=0.3.1
+        run: docker build . -t aniskhan001/kubectl-helm:3.1.2 --build-arg K8S_VERSION=v1.18.2 --build-arg HELM_VERSION=v3.1.2
+
+      - name: push the image
+        run: docker push aniskhan001/kubectl-helm
