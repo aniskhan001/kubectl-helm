@@ -4,7 +4,7 @@ ARG K8S_VERSION
 ARG HELM_VERSION
 
 # install kubectl
-RUN apk update && apk add --no-cache curl && \
+RUN apk update && apk add --no-cache curl alpine-sdk && \
     curl -LO https://storage.googleapis.com/kubernetes-release/release/${K8S_VERSION}/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl
