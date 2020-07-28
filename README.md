@@ -10,3 +10,10 @@ Minimal Docker image with `kubectl` and `helm` command available with a `sh`ell
 | 3.1.1 | 3.1.1 | 1.17.3 | 3.11 |
 | 3.1.2 | 3.1.2 | 1.18.2 | 3.11 |
 | 3.2.4 | 3.2.4 | 1.18.6 | 3.12 |
+
+
+### Versions with make (alpine-sdk) installed
+
+| `release` | `helm` | `kubectl` | `alpine` |
+|    :-:    |  :-:   |    :-:    |   :-:    |
+| make-3.2.4 | 3.2.4 | 1.18.6 | 3.12 |
